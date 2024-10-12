@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 多维列表的过渡 -->
+    <div id="list-demo" class="demo">
+        <button @click="shuffle">多维列表变换</button>
+        <transition-group name="cell" tag="div" class="container">
+            <span v-for="cell in cells" :key="cell.id" class="cell">{{ cell.number }}</span>
+        </transition-group>
+    </div>
+    <script src="../js/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    cells: Array.apply(null, { length: 81 }).map((_, index) => {
+                        return {
+                            id: index,
+                            number: index % 9 + 1
+                        }
+                    })
+                }
+            },
+            methods: {
+                shuffle() {
+                    this.cells = this.cells.sort(() => {
+                        return Math.random() - 0.5
+                    })
+                }
+            }
+        })
+        app.mount('#list-demo')
+    </script>
+    <style>
+        .container {
+            width: 270px;
+            margin-top: 10px;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .cell {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            outline: 1px solid #aaa;
+        }
+
+        /* 根据 <transition-group> 的 name 确定样式的名字 */
+        .cell-move {
+            transition: 3s;
+        }
+    </style>
+</body>
+</html>

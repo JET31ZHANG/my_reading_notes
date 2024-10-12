@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 分别使用计算属性和 methods 显示时间，
+     每次显示时间后都弹出暂停警告框暂停时间显示 -->
+    <div id="app">
+        时间1: {{ mytime() }} {{ mystop() }} <br>
+        时间2: {{ mytime() }} {{ mystop() }} <br>
+        时间3: {{ yourtime }} {{ mystop() }} <br>
+        时间4: {{ yourtime }} 
+    </div>
+    <script src="../js/vue.global.js"></script>
+    <script>
+        /*
+        *   计算属性是基于它依赖缓存的。
+        *   当一个计算属性所依赖的数据发生变化时，它才会重新取值。
+        */
+        const CounterApp = {
+            /*
+            *   使用 methods 显示时间1和时间2时，执行了两次 Date.now()，即调用了两次 methods
+            *   使用计算属性显示时间3和时间4时，即使中间弹出暂停警告框，显示的时间也是相同的。
+            *   从缓存中获取计算属性（Date.now()不是响应式依赖）
+            * 
+            *   使用计算属性还是 methods 取决于是否需要缓存？
+            * 
+            *   当遍历大数组或做大量计算时应该使用计算属性，从缓存中获取计算结果，提高执行效率。
+            */
+            methods: {
+                mytime() {
+                    return Date.now()
+                },
+                mystop() {
+                    alert('暂停一下')
+                }
+            },
+            computed: {
+                yourtime() {
+                    return Date.now()
+                }
+            }
+        }
+        Vue.createApp(CounterApp).mount('#app')
+    </script>
+</body>
+</html>

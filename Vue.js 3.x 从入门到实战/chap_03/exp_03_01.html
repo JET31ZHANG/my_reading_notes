@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 使用 v-bind 指令动态绑定超链接的 href 属性和图片的 src 属性，
+     当数据变化时，href 属性值和 src 属性值也发生变化，即重新渲染-->
+    <div id="app">
+        <a v-bind:href="myurl.baiduUrl">去百度</a>
+        <img v-bind:src="myurl.imgUrl" alt=""/>
+        <!-- v-bind: 可缩写为":", 这种缩写称为语法糖 -->
+        <a :href="myurl.baiduUrl">去百度</a>
+        <img :src="myurl.imgUrl" alt=""/>
+    </div>
+    <script src="../js/vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    myurl: {
+                        baiduUrl: 'https://www.baidu.com',
+                        imgUrl: 'images/ok.gif'
+                    }
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
