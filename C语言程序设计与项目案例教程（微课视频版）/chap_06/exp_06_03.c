@@ -1,7 +1,13 @@
+/*
+*   
+*
+*   样例输入：
+*   样例输出：
+*/
 #include <stdio.h>
 int main()
 {
-    int a[0];                   /* 整型数组 a 最多存放 8 个元素 */
+    int a[8];                   /* 整型数组 a 最多存放 8 个元素 */
     int i, max, min;
     printf("请输入 8 个整数：");
 
