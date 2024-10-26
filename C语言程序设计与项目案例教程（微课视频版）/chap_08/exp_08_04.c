@@ -1,5 +1,6 @@
 /*
 *   建立同学通讯录
+*
 *   样例输入：   input name：
 *               王丽
 *               input phone：
