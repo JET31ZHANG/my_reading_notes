@@ -7,11 +7,11 @@
 #include <stdio.h>
 int main()
 {
-    int a[5];
+    int a[5];                   
     int i, min;
     for(i = 0; i < 5; i++)      /* 循环 4 次 */
     {
-        scanf("%d", &a[i]);
+        scanf("%d", &a[i]);     /* 数组引用，给数组元素赋值 */
     }
 
     min = a[0];                 /* 数组引用，给 min 变量赋初值 */
