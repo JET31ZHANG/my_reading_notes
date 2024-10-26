@@ -9,21 +9,21 @@
 
 int main(void)
 {
-    int s;
-    printf("请输入信号灯 s 的值：");
-    scanf("%d", &s);
-    if(s == 1)
+    int s;                                  /* 定义整型变量 s 表示交通信号灯 */
+    printf("请输入信号灯 s 的值：");          /* 输出屏幕提示 */
+    scanf("%d", &s);                        /* 从键盘输入 s 的值 */
+    if(s == 1)                              /* s == 1, 表示绿灯亮 */
     {
-        printf("请车辆有序通行！\n");
+        printf("请车辆有序通行！\n");        /* 输出结果 */
     }
-    else if(s == 0) 
+    else if(s == 0)                         /* s == 0, 表示红灯亮 */
     {
-        printf("请及时停车！\n");
+        printf("请及时停车！\n");            /* 输出结果 */
     }
-    else 
+    else                                    /* s 输入其他值, 表示黄灯亮 */
     {
-        printf("黄灯亮，请准备停车。\n");
+        printf("黄灯亮，请准备停车。\n");     /* 输出结果 */
     }
     
-    return 0;
+    return 0;                               /* 函数返回值 */
 }
