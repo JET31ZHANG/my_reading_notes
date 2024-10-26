@@ -14,7 +14,7 @@ int main(void)
     {
         scanf("%d", &num);
         i++;
-    } while (num != -1);            /*  */
+    } while (num != -1);            /* 当输入的 num 不等于 -1 时，执行循环体 */
     
     printf("输入整数的个数是 %d\n", i - 1);
 

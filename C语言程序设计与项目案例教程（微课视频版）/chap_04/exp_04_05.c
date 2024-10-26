@@ -10,9 +10,9 @@ int main(void)
 {
     int i = 0;
     int sum = 0;
-    for(i = 1; i <= 100; i++)       /*  */
+    for(i = 1; i <= 100; i++)       /* 当 i 小于等于 100 时执行循环体 */
     {
-        sum += i;                   /*  */
+        sum += i;                   /* 循环体语句 */
     }
     printf("sum = %d", sum);
 

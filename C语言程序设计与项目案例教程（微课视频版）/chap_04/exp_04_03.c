@@ -13,7 +13,7 @@ int main(void)
     {
         sum += i;
         i++;
-    } while (i <= 100);             /*  */
+    } while (i <= 100);             /* 当 i 小于或等于 100 时执行循环体 */
 
     printf("sum = %d", sum);
 

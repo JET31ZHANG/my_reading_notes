@@ -10,7 +10,7 @@ int main(void)
 {
     int i;
     long x = 1;
-    for(i = 1; ; i++) 
+    for(i = 1; ; i++)           /* 省略表达式 2 循环条件判断 */
     {
         if(x % 3 == 1 && 
         x % 5 == 2 && 

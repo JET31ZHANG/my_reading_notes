@@ -2,6 +2,7 @@
 *   
 * 
 *   样例：
+*       ======这是一个猜数字游戏！======
 *       请输入密码：1234
 *       请输入一个整数(1~100):30
 *       您输入的数是 30.数值太小了，按任意键重试！
@@ -30,10 +31,11 @@ int main(void)
     int i = 0;
     int password = 0;
     int number = 0;
-    int price = 58;
-    while (password != 1234)
+    int price = 58;             /* price 为给定的数字 */
+    printf("\n======这是一个猜数字游戏！======\n");
+    while (password != 1234)    /* 判断密码是否正确 */
     {
-        if (i > 3)
+        if (i > 3)              /* 输入次数超过 3 次，程序退出 */
         {
             return 0;
         }
@@ -43,46 +45,46 @@ int main(void)
     }
     i = 0;
 
-    while (number != price)
+    while (number != price)     /* 当所猜数字 number 不等于给定数字 price 时 */
     {
         do {
             printf("请输入一个整数(1~100):");
             scanf("%d", &number);
             printf("您输入的数是 %d.", number);
-        } while (!(number >= 1 && number <= 100));
+        } while (!(number >= 1 && number <= 100));  /* 数字在 1 到 100 之间正确范围时 */
 
-        if (number >= 90)
+        if (number >= 90)                           /* 输入数值太大 */
         {
             printf("数值太大了，按任意键重试！\n");
         }
-        else if (number >= 70 && number < 90)
+        else if (number >= 70 && number < 90)       /* 输入数值大一些 */
         {
             printf("数值大了些，按任意键重试！\n");
         }
-        else if (number >= 1 && number <= 30)
+        else if (number >= 1 && number <= 30)       /* 输入数值太小 */
         {
             printf("数值太小了，按任意键重试！\n");
         }
-        else if (number > 30 && number <= 50)
+        else if (number > 30 && number <= 50)       /* 输入数值小一些 */
         {
             printf("数值小了些，按任意键重试！\n");
         }
         else
         {
-            if (number == price)
+            if (number == price)                    /*输入数值等于给定数字 */
             {
                 printf("太好了！您猜对了！再见！\n");
             }
-            else if (number < price)
+            else if (number < price)                /* 输入数值只小一点了 */
             {
                 printf("对不起，只小了一点！按任意键重试！\n");
             }
-            else if (number > price)
+            else if (number > price)                /* 输入数值只大一点了 */
             {
                 printf("对不起，只大了一点！按任意键重试！\n");
             }
         }
-        getchar();
+        getchar();                                  /* 读取下一个字符 */
     }
     return 0;
 }

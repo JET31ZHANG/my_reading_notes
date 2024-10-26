@@ -16,14 +16,14 @@
 
 int main(void)
 {
-    int i, j;                                               /*  */
-    for (i = 1; i <= 9; i++)                                /*  */
+    int i, j;                                               /* i 为行，j 为列 */
+    for (i = 1; i <= 9; i++)                                /* i 控制乘法表的行数 */
     {
-        for (j = 1; j <= i; j++)                            /*  */
+        for (j = 1; j <= i; j++)                            /* j 控制乘法表的列数 */
         {
             printf("%d * %d = % -5d\t", i, j, i * j);
         }
-        printf("\n");                                       /*  */
+        printf("\n");                                       /* 换行 */
     }
     return 0;
 }

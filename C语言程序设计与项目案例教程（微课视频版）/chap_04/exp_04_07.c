@@ -15,10 +15,10 @@ int main(void)
     double y1 = 1;
     double y2 = 1;
 
-    for(day = 1; day <= 365; day++)
+    for(day = 1; day <= 365; day++)         /* 循环条件 */
     {
         y1 = y1 * active;
-        y2 = y2 * slack;
+        y2 = y2 * slack;                    /* 每乘一次，衰减一次 */
     }
 
     printf("每天进步一点点，一年后为 %f\n", y1);
