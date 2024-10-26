@@ -1,13 +1,8 @@
 /*
 *   
 *
-*   样例输入：
-*   样例输出：
 */
-#include <stdio.h>
-
-int main(void)
+void printmsg()
 {
-
-    return 0;
-}
+	printf("中华崛起炎黄儿女生百福，民族团结歌舞升平纳千祥！"); 
+ }

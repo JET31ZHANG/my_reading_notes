@@ -1,13 +1,13 @@
 /*
 *   
 *
-*   样例输入：
-*   样例输出：
 */
 #include <stdio.h>
 
-int main(void)
+/* 自定义函数 subtract */
+int subtract(int i, int j)             
 {
-
-    return 0;
+	  int result;
+	  result = i - j;
+	  return result;
 }
