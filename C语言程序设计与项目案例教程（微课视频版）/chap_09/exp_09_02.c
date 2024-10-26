@@ -12,7 +12,7 @@ int main(void)
 {
     FILE *fp;
     char ch;
-    if((fp = fopen("d:\\9-2.txt", "r")) == NULL)          /* 若打开文件失败 */
+    if((fp = fopen("d:\\9-2.txt", "r")) == NULL)        /* 若打开文件失败 */
     {
         printf("\nerror:fail in opening myfile!");
         exit(0);                                        /* 退出程序 */

@@ -12,7 +12,7 @@ int main(void)
 {
     FILE *fp;
     char ch[100], *p = ch;                          /* 字符个数不超过100个 */
-    if((fp = fopen("d:\\file.txt", "w")) == NULL)     /* 若打开文件失败 */
+    if((fp = fopen("d:\\file.txt", "w")) == NULL)   /* 若打开文件失败 */
     {
         printf("\nerror:fail in opening myfile!");
         exit(0);                                    /* 退出程序 */
