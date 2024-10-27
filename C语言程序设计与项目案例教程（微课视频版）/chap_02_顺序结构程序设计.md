@@ -177,16 +177,29 @@
 
 - 标识符命名错误
 
+  ```c
+  #include <stdio.h>
+  int main(void)
+  {
+  	int Score1 = 90, 2score = 80, sum;	// 变量 2score 首字符为数字
+      sum = score1 + 2score;				// score1 不同于 Score1
+      printf("总成绩为：%d\n", sum);
+      return 0;
+  }
+  ```
+
+  
+
 - 变量定义错误
 
   ```c
   #include <stdio.h>
   int main(void)
   {
-  	int a, b;
+  	int a b;	// 多个变量中间没有用逗号隔开
       a = 10;
       b = 20;
-      printf("")
+      printf("a = %d, b = %d\n", a, b);
   }
   ```
 
@@ -199,7 +212,7 @@
   int main(void)
   {
   	char c;
-      c = B;
+      c = B;		// 字符常量 B 需要使用单引号括起来
       printf("c = %c\n", c);
       
       return 0;
