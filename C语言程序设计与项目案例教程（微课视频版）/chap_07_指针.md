@@ -29,7 +29,79 @@
 ## 常见错误
 
 - 对指针变量赋予非指针值
+
+  ```c
+  #include <stdio.h>
+  
+  int main(void)
+  {
+      int i = 10;
+      int *p;
+      /*
+      *	编译提示给指针变量赋值时用了整型数值。i 是整型变量，而 p 是指向整型变量的指针变量，它们的类型不同。
+      *	p 所要求的是一个指针值，即一个变量的地址。因此，应该写为 "p = &i"
+      */
+      p = i;		
+      printf("%d\n", p);
+      
+      return 0;
+  }
+  ```
+
 - 指针未能指向确定的存储区
+
+  ```c
+  #include <stdio.h>
+  
+  int main(void)
+  {
+      char *str;
+      scanf("%s", str);	// 企图从键盘输入一个字符串，使 str 指向该字符串
+      printf("%s", str);
+      
+      return 0;
+  }
+  
+  /*
+  *	严重性		代码			说明	
+  *	错误		C4700		  使用了未初始化的局部变量“str”
+  */
+  ```
+
 - 混淆数组名与指针变量
+
+  ```c
+  #include <stdio.h>
+  
+  int main(void)
+  {
+      int i, a[5];
+      for(i = 0; i < 5; i++)
+          /*
+          *	企图通过改变 a 的值使指针下移，每次指向下一个数组元素。
+          *	但 a 是数组名，是数组的首地址，是常量，它的值是不能改变的。
+          *	a++ 是错误的，应当用指针变量来指向各数组元素。
+          */
+          scanf("%d", a++);
+      return 0;
+  }
+  ```
+
 - 不同数据类型的指针混用
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int a = 5, *p;
+    float b = 3.5, *q;
+    p = &a;
+    q = &b;
+    q = p;		// 企图使 q 指向整型变量 a，但 q 是指向 float 型变量的指针，不能指向整型变量
+    printf("%d, %d\n", *p, *q);
+    
+    return 0;
+}
+```
 
