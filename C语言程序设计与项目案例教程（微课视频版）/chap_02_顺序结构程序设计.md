@@ -159,11 +159,15 @@
 
 - 逗号运算
 
-- 条件运算
+- 条件运算：三目运算符。
 
 ## C语言语句分类
 
 - 控制语句
+  - 选择结构控制语句：if-else、switch()
+  - 循环结构控制语句：while、do-while、for
+  - 流程转向控制语句：break、continue、goto、return
+
 - 函数调用语句
 - 表达式语句
 - 空语句
@@ -172,6 +176,50 @@
 ## 常见错误
 
 - 标识符命名错误
+
 - 变量定义错误
+
+  ```c
+  #include <stdio.h>
+  int main(void)
+  {
+  	int a, b;
+      a = 10;
+      b = 20;
+      printf("")
+  }
+  ```
+
+  
+
 - 字符变量赋值错误
+
+  ```c
+  #include <stdio.h>
+  int main(void)
+  {
+  	char c;
+      c = B;
+      printf("c = %c\n", c);
+      
+      return 0;
+  }
+  ```
+
+  
+
 - 运算时错用数据类型
+
+  ```c
+  #include <stdio.h》
+  int main(void)
+  {
+      float a, b;
+      a = 7 / 2;		// 两个整数相除是整除，取商的整数部分
+      b = 7.0 / 2;	// 除数或被除数有一个是浮点数，结果才是浮点数
+      printf("a = %f, b = %f\n", a, b);
+      return 0;
+  }
+  ```
+
+  
