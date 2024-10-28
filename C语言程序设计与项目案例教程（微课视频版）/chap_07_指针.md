@@ -201,7 +201,7 @@
   }
   ```
 
-- xxxxxxxxxx #include <stdio.h>​struct student{    char *name;    int score;};​int main(void){    student s1; // 漏掉 struct 关键字    return 0;}c
+- 不同数据类型的指针混用
 
 ```c
 #include <stdio.h>
