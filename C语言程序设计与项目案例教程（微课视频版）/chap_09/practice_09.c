@@ -19,9 +19,58 @@
 *   样例输出：
 */
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void)
 {
+    FILE *fp;
+    char ch, str1[100], str2[100];
+
+    if((fp = fopen("d:\\中国诗词大会.txt", "r")) == NULL)   /* 打开文件失败 */
+    {
+        printf("文件读取失败!");
+        exit(0);    /* 退出程序 */
+    }
+
+    ch = fgetc(fp);
+    while(ch != EOF)
+    {
+        putchar(ch);
+        ch = fgetc(fp);
+    }
+
+    fclose(fp);
+    printf("\n\n");
+
+    if((fp = fopen("d:\\中国诗词大会.txt", "rt")) == NULL)  /* 打开文件失败 */
+    {
+        printf("文件读取失败!");
+        exit(0);    /* 退出程序 */
+    }
+
+    while(!feof(fp))
+    {
+        fgets(str1, 100, fp);
+        printf("%s", str1);
+    }
+
+    fclose(fp);
+    printf("\n\n");
+
+    if((fp = fopen("d:\\中国诗词大会.txt", "rt")) == NULL)  /* 打开文件失败 */
+    {
+        printf("文件读取失败!");
+        exit(0);    /* 退出程序 */
+    }
+
+    while(!feof(fp))
+    {
+        fscanf(fp, "%s", str2);
+        printf("%s", str2);
+    }
+
+    fclose(fp);
+    printf("\n\n");
 
     return 0;
 }
