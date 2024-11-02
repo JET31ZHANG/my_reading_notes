@@ -1,19 +1,19 @@
-#include<stdio.h>
-#include<malloc.h>
-#include<stdlib.h>
-#include<string.h>
+#include <stdio.h>
+#include <malloc.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define LEN 50
 
 typedef struct Student
 {
-    char sno[10];
-    char sname[20];
-    char gender;
-    int computer;
-    int maths;
-    int english;
-    int total;
+    char sno[10];       // 学号
+    char sname[20];     // 姓名
+    char gender;        // 性别
+    int computer;       // 计算机成绩
+    int maths;          // 数学成绩
+    int english;        // 英语成绩
+    int total;          // 总成绩
 } ElemType;
 
 typedef struct SequenceList
@@ -30,3 +30,6 @@ int ListLength();
 bool ListEmpty();
 void DestroyList();
 bool GetElemByPos();
+int GetElemByElem(SqList * L, ElemType e);
+bool ListInsert(SqList * L, int i, ElemType e);
+bool ListDelete(SqList * L, int i, ElemType e);
