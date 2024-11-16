@@ -1,3 +1,4 @@
+package CompoundInterest;
 /**
  * This program shows how to store tabular data in a 20 array.
  * @version 1.40 2004-02-10

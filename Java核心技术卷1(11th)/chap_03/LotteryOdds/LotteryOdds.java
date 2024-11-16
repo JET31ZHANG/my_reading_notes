@@ -1,3 +1,4 @@
+package LotteryOdds;
 import java.util.*;
 
 /**
