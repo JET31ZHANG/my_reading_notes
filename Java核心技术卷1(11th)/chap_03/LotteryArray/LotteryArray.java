@@ -1,3 +1,4 @@
+package LotteryArray;
 /**
  * This program demonstrates a triangle array.
  * @version 1.20 2004-02-10
