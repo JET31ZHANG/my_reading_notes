@@ -46,15 +46,67 @@
   * 完全二叉树的顺序存储
   * 普通二叉树的顺序存储
   * 顺序存储方式分析
+  
 * 链式存储方式
   * 二叉链表存储
+  
+    ```c
+    // 定义结点数据类型结构体
+    typedef struct node
+    {
+        // 定义数据域
+        datatype data;
+        // 定义左孩子指针域
+        struct node * lchild;
+        // 定义右孩子指针域
+        struct node * rchild;
+    } btNode;
+    ```
+  
+    
+  
   * 三叉链表存储
 
 #### 二叉树的基本操作
 
 * 创建二叉树
+
+  ```c
+  // 创建二叉树
+  btNode * CreateTree()
+  {
+      char x;、
+      // 接收键盘输入数据域值
+      scanf("%c", &x);
+      getchar();
+      // 表示后继结点为空
+      if(x == '0')
+      {
+          bt = NULL;
+      }
+      else 
+      {
+          // 为结点动态申请内存空间
+          bt = (btNode *) malloc (sizeof(btNode));
+          // 给结点的数据域赋值
+          bt -> data = x;
+          printf("请输入结点 %c 的左孩子结点", bt -> data);
+          // 递归调用，创建左子树
+          bt -> lchild = CreateTree();
+          printf("请输入结点 %c 的右孩子结点", bt -> data);
+          // 递归调用，创建右子树
+          bt -> rchild = CreateTree();
+      }
+      return bt;
+  }
+  ```
+
+  
+
 * 求二叉树的高度
+
 * 求二叉树结点总数
+
 * 查找数据元素
 
 ## 遍历二叉树和线索二叉树
