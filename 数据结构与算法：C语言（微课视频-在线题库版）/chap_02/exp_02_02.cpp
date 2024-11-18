@@ -1,6 +1,7 @@
 /*
 *   用单链表实现学生成绩管理信息系统
 */
+// 头文件
 #include <stdio.h>
 #include <malloc.h>
 #include <stdlib.h>
