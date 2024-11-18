@@ -24,20 +24,28 @@
 #### 稀疏矩阵的三元组表存储
 
 ```c
-#define MAX N				// N 表示一个足够大的数
-typedef struct
+#define MAX N 
+typedef struct 
 {
-    int i;					// 非零元素的行序号
-    int j;					// 非零元素的行序号
-    ElemType v;				// 非零元素值
-} LOTNode;					// 三元组类型
-typedef struct
+    // 非零元素的行序号
+    int i;
+    // 非零元素的列序号
+    int j;
+    // 非零元素值
+    ElemType v;
+} LOTNode;      // 三元组类型
+
+typedef struct 
 {
-    int r;					// 稀疏矩阵的总行数
-    int c;					// 稀疏矩阵的总列数
-    int n;					// 稀疏矩阵的非零元素个数
-    LOTNode data[MAX];		// 三元组表
-} LOTMatrix;				// 三元组表的存储类型
+    // 稀疏矩阵的总行数
+    int r;
+    // 稀疏矩阵的总列数
+    int c;
+    // 稀疏矩阵的非零元素个数
+    int n;
+    // 三元组表
+    LOTNode data[MAX];
+} LOTMatrix;    // 三元组表的存储类型
 ```
 
 
