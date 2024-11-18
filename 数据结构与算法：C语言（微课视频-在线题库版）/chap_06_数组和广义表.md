@@ -86,15 +86,18 @@ typedef struct Gnode
 
   ```c
   /*
-  *	算法步骤：（1）定义计数变量 n 的初值为 0；
+  *	算法步骤：
+  *			（1）定义计数变量 n 的初值为 0；
   *			（2）定义指向广义表结点类型的指针变量q，并令其指向广义表的第一个元素；
   *			（3）当 q 不等于空时进入循环，q 指向第一个层次的下一个结点，计数变量 n 加 1。
   */
   int Length(GList * p)
   {
-      int n = 0;					// 计数变量初值为 0
+      // 计数变量初值为 0
+      int n = 0;					
       GList * q;
-      q = p -> optional.Listadd;	// q 指向广义表的第一个元素
+      // q 指向广义表的第一个元素
+      q = p -> optional.Listadd;	
       while(q != NULL)
       {
           n++;
@@ -108,7 +111,8 @@ typedef struct Gnode
 
   ```c
   /*
-  *	算法步骤：（1）令指针变量 p 指向广义表的头结点，如果 p -> tag == 0 成立，则该广义表是一个原子，则返回 0；
+  *	算法步骤：
+  *			（1）令指针变量 p 指向广义表的头结点，如果 p -> tag == 0 成立，则该广义表是一个原子，则返回 0；
   *			（2）定义指向广义表结点类型的指针变量 q，并令其指向广义表的第一个元素，如果 q == NULL 成立，则该广义表是一个空表，并返回 1；
   *			（3）若均不满足上述两种情况，当 q != NULL 时进入循环，采用递归的方式计算出该广义表的深度。
   */
@@ -116,16 +120,20 @@ typedef struct Gnode
   {
       int max = 0, deep;
       GList * q;
-      if(p -> tag == 0)			// 广义表是一个原子，返回 0
+      // 广义表是一个原子，返回 0
+      if(p -> tag == 0)			
           return 0;
-      q = q -> optional.Listadd;	// q 指向广义表的第一个元素
-      if(q == NULL)				// 广义表是一个空表，返回 1
+      // q 指向广义表的第一个元素
+      q = q -> optional.Listadd;	
+      // 广义表是一个空表，返回 1
+      if(q == NULL)				
           return 1;
       while(q != NULL)
       {
           if(q -> tag == 1)
           {
-              deep = Depth(q);	// 递归方式求广义表的深度
+              // 递归方式求广义表的深度
+              deep = Depth(q);	
               if(deep > max)
                   max = deep;
           }
