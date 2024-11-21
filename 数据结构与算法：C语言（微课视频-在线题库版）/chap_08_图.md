@@ -339,6 +339,52 @@ void BFSM(MGraph * G, int k)
 
 * 基本概念
 * Prim 算法
+
+```c
+void Prim(int gm[ ][MAXNODE], int n, int closevertex[ ])
+{
+    int lowcost[100], mincost;
+    int i, j , k;
+    for(i = 1; i < n; i++)
+    {
+        lowcost[i] = gm[0][i];
+        closevertex[i] = 0;
+    }
+
+    // 
+    lowcost[0] = 0;
+    closevertex[0] = 0;
+    // 
+    for(i = 1; i < n; i++)
+    {
+        // 
+        mincost = MAXCOST;
+        j = 1;
+        k = 1;
+        while(j < n)
+        {
+            if((lowcost[j] < mincost) && (lowcost[j] != 0)) 
+            {
+                mincost = lowcost[j];
+                k = j;
+            }
+            j++;
+        }
+        printf("顶点的序号 = %d, 边的权值 = %d\n", k, mincost);
+        lowcost[k] = 0;
+        // 
+        for(j = 1; j < n; j++)
+        {
+            if(gm[k][j] < lowcost[j])
+            {
+                lowcost[j] = gm[k][j];
+                closevertex[j] = k;
+            }
+        }
+    }
+}
+```
+
 * Kruskal 算法
 
 #### 最短路径
