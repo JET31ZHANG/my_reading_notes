@@ -71,7 +71,7 @@ void FindTwoMin(HuffTree tree, int i, int * p1, int * p2)
         if(tree[j].parent == -1)
         {
             // 且不是权值最小结点
-            if((min2 > tree[j].weight) && (j != p1))
+            if((min2 > tree[j].weight) && (j != * p1))
             {
                 min2 = tree[j].weight;
                 * p2 = j;
